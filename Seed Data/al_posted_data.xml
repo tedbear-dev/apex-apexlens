@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<ROWSET>
+ <ROW>
+  <TIME_STAMP>20180219200948.078845</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201051.677898</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201056.297147</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201315.188344</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219200927.515872</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219200946.787093</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201348.85747</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201352.706163</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201505.065307</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201509.900045</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201630.859059</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219202758.847693</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219203110.111775</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;Yay AJAX?&quot;,&quot;color&quot;:&quot;blue&quot;}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219203143.454031</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;# Very very very long $tring #&quot;,&quot;color&quot;:&quot;yellow&quot;}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219203552.700676</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;Scary Monster&quot;,&quot;color&quot;:&quot;green&quot;}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219201429.234488</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219202554.036432</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+ <ROW>
+  <TIME_STAMP>20180219203024.541995</TIME_STAMP>
+  <LENS_UUID>ab3b30db-bf9c-4a37-8682-868e5c4c948e</LENS_UUID>
+  <MARKER_NUMBER>20</MARKER_NUMBER>
+  <JSON_PAYLOAD>{&quot;message&quot;:&quot;some stuff&quot;,&quot;time&quot;:185}</JSON_PAYLOAD>
+ </ROW>
+</ROWSET>

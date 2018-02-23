@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<ROWSET>
+ <ROW>
+  <ID>21</ID>
+  <NAME>Configurable Donut</NAME>
+  <DESCRIPTION>A torus that can be configured via its marker control setup.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz,config){
+    var geometry = new THREE.TorusGeometry(
+      config.radius || 1, 
+      config.tube || 0.4,
+      config.radialSegments || 64, 
+      config.tubularSegments || 16
+    );
+    var material = new THREE.MeshStandardMaterial({
+      color:config.color || &quot;#fff&quot;
+    }); 
+    var mesh = new THREE.Mesh( geometry, material );
+    mesh.position.y = 0.5
+
+    thiz.spin = config.spinSpeed || {x:0,y:0,z:0};
+    thiz.addObject(&quot;torusMesh&quot;,mesh);
+  },
+  update: function(thiz,dt){
+    var obj = thiz.findObject(&quot;torusMesh&quot;);
+    obj.rotation.x += dt * thiz.spin.x;
+    obj.rotation.y += dt * thiz.spin.y;
+    obj.rotation.z += dt * thiz.spin.z;
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+ <ROW>
+  <ID>61</ID>
+  <NAME>Textured Box</NAME>
+  <DESCRIPTION>A box geometry with diffuse and normal maps, to test the resources functionality.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz){
+    var loader = new THREE.TextureLoader();
+    var geometry = new THREE.CubeGeometry(1,1,1);
+    var material = new THREE.MeshStandardMaterial({
+      map: loader.load( &apos;#CTRL_RESOURCES#apex_crate.jpg&apos; )
+      ,normalMap: loader.load( &apos;#CTRL_RESOURCES#crate_normals.png&apos; )
+    }); 
+    var mesh = new THREE.Mesh( geometry, material );
+    mesh.position.y = 0.5
+
+    thiz.addObject(&quot;crate&quot;,mesh);
+  },
+  update: function(thiz,dt){
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+ <ROW>
+  <ID>1</ID>
+  <NAME>Spinning Red Torus</NAME>
+  <DESCRIPTION>A simple red torus knot, that spins around the X axis.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz){
+    var geometry = new THREE.TorusKnotGeometry(0.3,0.1,64,16);
+    var material = new THREE.MeshStandardMaterial({color:&apos;#f00&apos;}); 
+    var mesh = new THREE.Mesh( geometry, material );
+    mesh.position.y = 0.5
+
+    thiz.addObject(&quot;torusMesh&quot;,mesh);
+  },
+  update: function(thiz,dt){
+    thiz.findObject(&quot;torusMesh&quot;).rotation.x += dt * 2.5;
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+ <ROW>
+  <ID>2</ID>
+  <NAME>Transparent Cube</NAME>
+  <DESCRIPTION>A transparent cube, that spins around the Y axis.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz){
+    var geometry = new THREE.CubeGeometry(1,1,1);
+    var material = new THREE.MeshNormalMaterial({
+      transparent : true,
+      opacity: 0.5,
+      side: THREE.DoubleSide
+    }); 
+    var mesh = new THREE.Mesh( geometry, material );
+    mesh.position.y = geometry.parameters.height/2
+
+    thiz.addObject(&quot;cubeMesh&quot;,mesh);
+  },
+  update: function(thiz,dt){
+    thiz.findObject(&quot;cubeMesh&quot;).rotation.y += dt * 5.0;
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+ <ROW>
+  <ID>101</ID>
+  <NAME>Squeaky Duck</NAME>
+  <DESCRIPTION>A rubber duck that squeaks when you poke it.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz){
+  
+    // Load the normal texture and the &quot;squeaking&quot; version
+    var tex_loader = new THREE.TextureLoader();
+    thiz.orig_tex = tex_loader.load( &apos;#CTRL_RESOURCES#duckling_diff.jpg&apos; );
+    thiz.squeak_tex = tex_loader.load( &apos;#CTRL_RESOURCES#duckling_diff_v2.jpg&apos; );
+
+    // Set up a shiny (literally!) new material
+    thiz.shiny_duck = new THREE.MeshPhongMaterial({
+      map: thiz.orig_tex,
+      shininess: 50,
+      specular: 0x303030
+    });
+
+    // Load the duck model 
+    var fbx_loader = new THREE.FBXLoader(AL.loadingManager);
+    fbx_loader.load(&quot;#CTRL_RESOURCES#RubberDuck.fbx&quot;, function ( model) {
+
+      // FBX models are groups, so traverse its children setting materials 
+      model.traverse(function (child) {
+        if (child instanceof THREE.Mesh) {
+          child.material = thiz.shiny_duck;
+        }
+      });
+
+      // Load the sound we want to play
+      // SoundJS is included in every Lens
+      // https://createjs.com/soundjs
+      createjs.Sound.registerSound(&quot;#CTRL_RESOURCES#squeak.wav&quot;, &quot;squeak&quot;);
+
+      // Add the duck to the marker
+      thiz.addObject(&quot;duckModel&quot;,model);
+    },AL.onLoadProgress,AL.onLoadError);
+  },
+  hit: function(thiz,intersects){
+    // We&apos;ve been poked!
+    AL.log(&apos;Squeak!&apos;);
+    createjs.Sound.play(&quot;squeak&quot;);
+
+    // Vibrate a bit
+    if (&quot;vibrate&quot; in navigator) navigator.vibrate(250);
+
+    // Change the duck&apos;s texture, squish it, and then change it back a bit later
+    thiz.shiny_duck.map = thiz.squeak_tex;
+    thiz.shiny_duck.needsUpdate = true;
+    thiz.findObject(&quot;duckModel&quot;).scale.set(0.9,1.1,1);
+    setTimeout(function(){
+      thiz.shiny_duck.map = thiz.orig_tex;
+      thiz.shiny_duck.needsUpdate = true;
+      thiz.findObject(&quot;duckModel&quot;).scale.set(1,1,1);
+    },500); 
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+ <ROW>
+  <ID>81</ID>
+  <NAME>Configurable Text Control</NAME>
+  <DESCRIPTION>Displays text. The parameters &quot;color&quot; and &quot;text&quot; can be used to configure the display.
+Other supported parameters; size, height, curveSegments, bevelEnabled, bevelThickness, bevelSize, bevelSegments.</DESCRIPTION>
+  <JAVASCRIPT_CODE>{
+  init: function(thiz,params){
+    
+    thiz.create_text = function(params_text){
+      var geometry = new THREE.TextBufferGeometry(params_text||&apos;Your Text Here&apos;,{
+        font:           thiz.loaded_font,
+        size:           thiz._params.size || 80,
+        height:         thiz._params.height || 10,
+        curveSegments:  thiz._params.curveSegments || 12,
+        bevelEnabled:   thiz._params.bevelEnabled,
+        bevelThickness: thiz._params.bevelThickness || 10,
+        bevelSize:      thiz._params.bevelSize || 8,
+        bevelSegments:  thiz._params.bevelSegments || 5
+      });
+      var material = new THREE.MeshStandardMaterial({color:thiz._params.color || &apos;white&apos;}); 
+      var mesh = new THREE.Mesh( geometry, material );
+      
+      geometry.computeBoundingBox();
+      var scale = 2.0 / geometry.boundingBox.max.x;
+      mesh.scale.set(scale,scale,scale);
+      mesh.position.x = (geometry.boundingBox.max.x / -2) * scale;
+      mesh.rotation.x = -Math.PI / 2.0;
+
+      // Will automatically remove any object with the same name
+      thiz.addObject(&quot;threeDeeText&quot;,mesh);
+    }
+    
+    var font_loader = new THREE.FontLoader();
+    font_loader.load(&apos;#CTRL_RESOURCES#helvetiker_regular.typeface.json&apos;,function(font){
+      thiz.loaded_font = font;
+      thiz.create_text(params.text);
+    });
+  },
+  update: function(thiz,dt){
+  },
+  data: function(thiz,data){
+    AL.log(&quot;Control received some data&quot;);
+    if(data.color) thiz._params.color = data.color;
+    thiz.create_text(data.message);
+  }
+}</JAVASCRIPT_CODE>
+ </ROW>
+</ROWSET>

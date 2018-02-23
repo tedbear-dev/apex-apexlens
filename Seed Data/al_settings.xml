@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ROWSET>
+ <ROW>
+  <NAME>PROTOCOL</NAME>
+  <VALUE>https</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>SERVER_NAME</NAME>
+  <VALUE>192.168.0.119</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>PORT_NUMBER</NAME>
+  <VALUE>443</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>REST_URL</NAME>
+  <VALUE>/ords/apexlens/rest</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>START_URL</NAME>
+  <VALUE>/ords/f?p=LAUNCHER</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>DATA_TIMEOUT</NAME>
+  <VALUE>30</VALUE>
+ </ROW>
+ <ROW>
+  <NAME>SLEEP_MS</NAME>
+  <VALUE>200</VALUE>
+ </ROW>
+</ROWSET>
